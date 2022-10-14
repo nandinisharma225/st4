@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "fullname": "Jane",
+      "email": "Austen",
+      "username": "jausten",
+      "id": 2
+    },
+    {
+      "fullname": "Suman",
+      "email": "suman@gmail.com",
+      "username": "suman",
+      "id": 3
+    },
+    {
+      "fullname": "Ayushi",
+      "email": "ayu@gmail.com",
+      "username": "ayu",
+      "id": 5
+    },
+    {
+      "fullname": "Riya",
+      "email": "riyass@gmail.com",
+      "username": "riyasss",
+      "id": 6
+    },
+    {
+      "fullname": "Nikhil",
+      "email": "Saini",
+      "username": "nikSingh@gmail.com",
+      "id": 7
+    },
+    {
+      "fullname": "Eric",
+      "email": "Chahl",
+      "username": "ericc",
+      "id": 8
+    },
+    {
+      "fullname": "Alice",
+      "email": "walker@gmail.com",
+      "username": "alice",
+      "id": 10
+    },
+    {
+      "fullname": "Nancy",
+      "email": "drew@gmail.com",
+      "username": "ns",
+      "id": 12
+    },
+    {
+      "fullname": "Sumit",
+      "email": "sumit@abc.com",
+      "username": "chinu",
+      "id": 14
+    },
+    {
+      "fullname": "abc",
+      "email": "abc@gmail.com",
+      "username": "bb[okkidjokljmlj",
+      "id": 16
+    }
+  ]
+}
