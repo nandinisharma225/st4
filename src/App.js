@@ -7,7 +7,8 @@ import About from "./components/About/About";
 import Register from "./components/Register/Register";
 import Read from "./components/Read/Read";
 import Update from "./components/Update/Update";
-import Login from "./components/Login/Login";
+import Image from "./components/ImageUpload/Image";
+// import AllPost from "./components/ImageUpload/AllPost";
 import logo from "./logo.png";
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
             <img src={logo} alt="noimg" className="logoimg" />
           </Link>
           <li className="nav-item">
-            <Link to="/login" className="nav-link">
-              Login
+            <Link to="/image" className="nav-link">
+              UploadImage
             </Link>
           </li>
           <li className="nav-item">
@@ -45,13 +46,14 @@ function App() {
           </li>
         </ul>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/read" element={<Read />}></Route>
-          <Route path="/update" element={<Update />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/update" element={<Update />} />
+          <Route path="/image" element={<Image />} />
+          <Route path="/read" element={<Read />} />
+          {/* <Route path="/gallery" element={<AllPost />} /> */}
         </Routes>
       </div>
     </>

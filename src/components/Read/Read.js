@@ -33,7 +33,7 @@ const Read = () => {
   };
 
   const [q, setQ] = useState("");
-  const [searchParam] = useState(["fullname", "email", "username"]);
+  const [searchParam] = useState(["email", "username"]);
 
   function search() {
     return APIData.filter((item) => {
@@ -69,29 +69,31 @@ const Read = () => {
             <tbody>
               {search(APIData).map((data) => {
                 return (
-                  <tr>
-                    <td>{data.fullname}</td>
-                    <td>{data.email}</td>
-                    <td>{data.username}</td>
-                    <td>
-                      <Link to="/update">
+                  data.id > 0 && (
+                    <tr>
+                      <td>{data.fullname}</td>
+                      <td>{data.email}</td>
+                      <td>{data.username}</td>
+                      <td>
+                        <Link to="/update">
+                          <input
+                            type="button"
+                            value="Update"
+                            onClick={() => setData(data)}
+                            className="btn update-btn"
+                          />
+                        </Link>
+                      </td>
+                      <td>
                         <input
                           type="button"
-                          value="Update"
-                          onClick={() => setData(data)}
-                          className="btn update-btn"
+                          value="Delete"
+                          onClick={() => deleteAPIData(data.id)}
+                          className="btn delete-btn"
                         />
-                      </Link>
-                    </td>
-                    <td>
-                      <input
-                        type="button"
-                        value="Delete"
-                        onClick={() => deleteAPIData(data.id)}
-                        className="btn delete-btn"
-                      />
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+                  )
                 );
               })}
             </tbody>

@@ -71,10 +71,9 @@
 }
 
 .mssg-area::placeholder {
-  font-family: "Cormorant Garamond", serif;
-  padding-left: 29px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: "Times New Roman", serif;
+  padding-left: 28px;
+  font-size: 0.98rem;
 }
 
 .cont-btn {

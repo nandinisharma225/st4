@@ -1,9 +1,6 @@
-import img1 from "./img1.jpeg";
-import img2 from "./img2.jpeg";
-import img3 from "./img3.png";
-import img4 from "./img4.jpg";
-import img5 from "./img5.jpg";
-
+import img3 from "./img3.jpg";
+import main1 from "./main1.jpeg";
+import main2 from "./main2.png";
 import "./Home.css";
 
 const Home = () => {
@@ -13,13 +10,13 @@ const Home = () => {
         <div>
           <img
             className="main-img animate__animated animate__fadeInLeft animate__slow"
-            src={img1}
+            src={main1}
             alt="noimg"
           />
         </div>
         <div className="info-div">
           <img
-            src={img2}
+            src={main2}
             alt="noimg"
             className="animate__animated animate__fadeInRight animate__slow"
           />
@@ -31,13 +28,13 @@ const Home = () => {
             WITH OUR THOUGHTS WE MAKE THE WORLD
           </p>
           <p className="home-container-data">
-            To see the World in a Grain of Sand,
+            The practice of good inventory management
             <br />
-            And a Heaven in a Wild Flower,
+            can identify trends, and
             <br />
-            Hold Infinity in the palm of your hand,
+            guarantee your business will have the right stock in
             <br />
-            And Eternity in an hour.
+            the right place at the right time
           </p>
           <button className="home-container-btn">Learn More</button>
         </center>
@@ -45,37 +42,39 @@ const Home = () => {
       <div className="flex-box-container">
         <div className="flex-item">
           <div className="image-box">
-            <img src={img3} alt="noimg" />
+            <img src={img3} alt="noimg" className="flex-item-image" />
           </div>
           <div className="inner-div">
             <center>
-              Be a Warrior,
+              Sooner or later, those who win are those
               <br />
-              not a Worrier..
+              who think they can
             </center>
           </div>
         </div>
         <div className="flex-item ">
           <div className="image-box">
-            <img src={img4} alt="noimg" width="540" height="548" />
+            <img src={img3} alt="noimg" className="flex-item-image" />
           </div>
           <div className="inner-div">
             <center>
-              Eventually,
+              Inventory is money
               <br />
-              Everything connects..
+              sitting around in
+              <br />
+              another form
             </center>
           </div>
         </div>
         <div className="flex-item ">
           <div className="image-box">
-            <img src={img5} alt="noimg" width="540" height="548" />
+            <img src={img3} alt="noimg" className="flex-item-image" />
           </div>
           <div className="inner-div">
             <center>
-              Everything that you are
+              There's nothing like rejection to make you do
               <br />
-              is enough..
+              an inventory of yourself
             </center>
           </div>
         </div>
