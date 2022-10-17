@@ -8,16 +8,32 @@
       "id": 0
     },
     {
-      "fullname": "Nancy",
-      "email": "nancy@gmail.com",
-      "username": "nsana",
+      "fullname": "Nandini",
+      "email": "ns@gmail.com",
+      "username": "nsafter",
+      "userpassword": "8888",
       "id": 1
     },
     {
-      "fullname": "Stacy",
-      "email": "stacy@gmail.com",
-      "username": "stacyyy",
+      "fullname": "Mehmet",
+      "email": "mehmet@cetin.example.com",
+      "username": "mehmet",
+      "userpassword": "392",
       "id": 2
+    },
+    {
+      "fullname": "Jade Renard",
+      "email": "jade@example.com",
+      "username": "renard",
+      "userpassword": "158",
+      "id": 3
+    },
+    {
+      "fullname": "Gabriele",
+      "email": "gabriele@example.com",
+      "username": "Gabriele",
+      "userpassword": "235",
+      "id": 5
     }
   ]
 }

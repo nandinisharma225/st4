@@ -15,22 +15,32 @@ const Register = () => {
   const [fullname, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUserName] = useState("");
+  const [userpassword, setPassword] = useState("");
 
   let history = useNavigate();
 
   const postData = () => {
-    console.log(fullname, email, username);
+    console.log(fullname, email, username, userpassword);
     axios
       .post("http://localhost:5000/data", {
         fullname,
         email,
         username,
+        userpassword,
       })
       .then(() => {
         alert("data saved successfully");
-        history("/read");
+        history("/");
       });
+    clearfields();
   };
+
+  function clearfields() {
+    setName("");
+    setEmail("");
+    setUserName("");
+    setPassword("");
+  }
 
   return (
     <>
@@ -80,6 +90,7 @@ const Register = () => {
                   type="password"
                   placeholder="your password"
                   className="res-inp"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>

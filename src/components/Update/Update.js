@@ -7,14 +7,15 @@ const Update = () => {
   const [fullname, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUserName] = useState("");
-
+  const [userpassword, setPassword] = useState("");
   const [id, setID] = useState(null);
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
     setName(localStorage.getItem("name"));
     setEmail(localStorage.getItem("email"));
-    setUserName(localStorage.getItem("username"));
+    setUserName(localStorage.getItem("uname"));
+    setPassword(localStorage.getItem("passwd"));
   }, []);
 
   let history = useNavigate();
@@ -25,6 +26,7 @@ const Update = () => {
         fullname,
         email,
         username,
+        userpassword,
       })
       .then(() => {
         alert("data updated successfully");
@@ -83,6 +85,8 @@ const Update = () => {
                   type="password"
                   placeholder="your password"
                   className="res-inp"
+                  value={userpassword}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>

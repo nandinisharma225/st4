@@ -14,6 +14,7 @@ const About = () => {
           </center>
         </div>
       </div>
+
       <div className="about-second-container">
         <div className="about-innerdiv">
           <img

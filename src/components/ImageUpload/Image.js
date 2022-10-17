@@ -1,5 +1,6 @@
 import "./Image.css";
 import $ from "jquery";
+import "animate.css";
 
 const Image = () => {
   const fileUploadLimit = 2048576;
@@ -9,27 +10,30 @@ const Image = () => {
   function renderImage(imageObj, $imageCollection) {
     if (imageObj.file_base64.length) {
       $imageCollection.append(
-        '<li class="img-item"><img src="data:image/png;base64,' +
-          imageObj.file_base64 +
-          '"  width="200" class="myImg"/></li>'
+        $imageCollection.append(
+          '<li class="card animate__animated animate__fadeIn"><img src="data:image/png;base64,' +
+            imageObj.file_base64 +
+            '" class="card-img" /><br /><a href="#" data-timestamp="' +
+            imageObj.timestamp +
+            '" class="btn-delete"><img src="delete.png" /></a></li>'
+        )
       );
     }
   }
 
-  // Add image to local storage.
   function addImage(imageObj) {
     imageData.push(imageObj);
     localStorage.setItem(localStorageKey, JSON.stringify(imageData));
   }
 
   // Remove image from local storage by timestamp.
-  // function removeImage(timestamp) {
-  //   // Remove item by the timestamp.
-  //   imageData = imageData.filter((img) => img.timestamp !== timestamp);
+  function removeImage(timestamp) {
+    // Remove item by the timestamp.
+    imageData = imageData.filter((img) => img.timestamp !== timestamp);
 
-  //   // Update local storage.
-  //   localStorage.setItem(localStorageKey, JSON.stringify(imageData));
-  // }
+    // Update local storage.
+    localStorage.setItem(localStorageKey, JSON.stringify(imageData));
+  }
 
   // Read image data stored in local storage.
   function getImages($imageCollection) {
@@ -44,6 +48,19 @@ const Image = () => {
     }
   }
 
+  // Delete button action to fire off deletion.
+  function deleteImageAction() {
+    $(".btn-delete").on("click", function (e) {
+      e.preventDefault();
+
+      removeImage($(this).data("timestamp"));
+
+      // Remove the HTML markup for this image.
+      $(this).parent().remove();
+    });
+  }
+
+  // Upload action to fire off file upload automatically.
   function uploadChangeAction($upload, $imageCollection) {
     $upload.on("change", function (e) {
       e.preventDefault();
@@ -61,6 +78,7 @@ const Image = () => {
             .replace("data:", "")
             .replace(/^.+,/, "");
 
+          // Create an object containing image information.
           let imageObj = {
             name: "image-" + ($imageCollection.find("li").length + 1),
             timestamp: Date.now(),
@@ -70,6 +88,11 @@ const Image = () => {
           // Add To Local storage
           renderImage(imageObj, $imageCollection);
           addImage(imageObj);
+
+          deleteImageAction();
+
+          // Clear upload element.
+          $upload.val("");
         };
 
         reader.readAsDataURL(file);
@@ -80,13 +103,13 @@ const Image = () => {
   }
 
   // Initialise.
-  window.onload = function () {
+  function displayImages() {
     getImages($("#image-collection"));
 
     // Set action events.
     uploadChangeAction($("#image-upload"), $("#image-collection"));
-    // deleteImageAction();
-  };
+    deleteImageAction();
+  }
 
   return (
     <>
@@ -100,8 +123,19 @@ const Image = () => {
             className="animate__animated animate__fadeInUp"
             type="file"
           />
+          <button
+            className="res-btn animate__animated animate__fadeInUp"
+            onClick={displayImages}
+          >
+            View Gallery
+          </button>
         </center>
-        <ul id="image-collection"></ul>
+        <center>
+          <div
+            id="image-collection"
+            className="animate__animated animate__fadeIn"
+          ></div>
+        </center>
       </div>
     </>
   );

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Read.css";
 
 const Read = () => {
+  let history = useNavigate();
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:5000/data").then((response) => {
@@ -13,11 +14,12 @@ const Read = () => {
 
   const setData = (data) => {
     // console.log(data);
-    let { fullname, email, username, id } = data;
+    let { fullname, email, username, password, id } = data;
     localStorage.setItem("ID", id);
     localStorage.setItem("name", fullname);
     localStorage.setItem("email", email);
-    localStorage.setItem("username", username);
+    localStorage.setItem("uname", username);
+    localStorage.setItem("userpassword", password);
   };
 
   const getData = () => {
@@ -45,6 +47,10 @@ const Read = () => {
     });
   }
 
+  function getInventory() {
+    history("/inventoryData");
+  }
+
   return (
     <>
       <div className="read-container animate__animated animate__fadeIn animate__slow">
@@ -62,6 +68,7 @@ const Read = () => {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Username</th>
+                <th>Password</th>
                 <th>Update</th>
                 <th>Delete</th>
               </tr>
@@ -74,6 +81,7 @@ const Read = () => {
                       <td>{data.fullname}</td>
                       <td>{data.email}</td>
                       <td>{data.username}</td>
+                      <td>{data.userpassword}</td>
                       <td>
                         <Link to="/update">
                           <input
@@ -98,6 +106,11 @@ const Read = () => {
               })}
             </tbody>
           </table>
+        </center>
+        <center>
+          <button className="inv-btn" onClick={getInventory}>
+            Get Inventory
+          </button>
         </center>
       </div>
     </>
