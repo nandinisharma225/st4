@@ -71,6 +71,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `npm run server`
 Before running the project make sure to start json server(required for CRUD operations to run smoothly)
+Perform following commands:
+cd server
+npm run server
 
+or if you do not want to run the above script use command:  json-server --watch db.json --port port
+
+### View of project
+
+![ss1](https://user-images.githubusercontent.com/78192028/196253615-dfdc0917-0a41-47d9-99c4-c5b60019b7a7.png)
+
+![ss2](https://user-images.githubusercontent.com/78192028/196253647-4ffb4892-b6c0-4fd3-bdb7-bc9dbba7649a.png)
+![ss3](https://user-images.githubusercontent.com/78192028/196253662-df89225d-f67a-4bfa-8a21-3eab21b04264.png)
 
 
